@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    tomcat10-config (https://github.com/hazendaz/tomcat10-config)
+
+    Copyright 2011-2023 Hazendaz.
+
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of The Apache Software License,
+    Version 2.0 which accompanies this distribution, and is available at
+    https://www.apache.org/licenses/LICENSE-2.0.txt
+
+    Contributors:
+        Hazendaz (Jeremy Landis).
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.github.hazendaz</groupId>
+        <artifactId>base-parent</artifactId>
+        <version>40</version>
+        <relativePath />
+    </parent>
+
+    <groupId>com.github.hazendaz.tomcat</groupId>
+    <artifactId>tomcat11-config</artifactId>
+    <version>11.0.0-M6-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>tomcat11-config</name>
+    <description>Distribution for Apache Tomcat11 Configuration Only</description>
+    <url>https://hazendaz.github.io/tomcat11-config/</url>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>manual</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:ssh://git@github.com/hazendaz/tomcat11-config.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/hazendaz/tomcat11-config.git</developerConnection>
+        <url>https://github.com/hazendaz/tomcat11-config</url>
+        <tag>HEAD</tag>
+    </scm>
+    <distributionManagement>
+        <site>
+            <id>gh-pages-scm</id>
+            <name>Apache Tomcat 11 Configuration Distribution Wrapper GitHub Pages</name>
+            <url>scm:git:ssh://git@github.com/hazendaz/tomcat11-config.git</url>
+        </site>
+    </distributionManagement>
+
+    <properties>
+        <tomcat.version>11.0.0-M6</tomcat.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat</artifactId>
+            <version>${tomcat.version}</version>
+            <scope>provided</scope>
+            <type>tar.gz</type>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Unpack -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>unpack</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.apache.tomcat</groupId>
+                                    <artifactId>tomcat</artifactId>
+                                    <version>${tomcat.version}</version>
+                                    <type>tar.gz</type>
+                                    <outputDirectory>${project.build.directory}/tomcat-config</outputDirectory>
+                                    <includes>**/*bootstrap.jar,**/*tomcat-native.tar.gz,**/*.sh,**/*.xml,**/*catalina.policy,**/*catalina.properties,**/*.xsd,**/*LICENSE,**/*NOTICE,**/*RELEASE-NOTES,**/*RUNNING.txt</includes>
+                                    <excludes>**/*lib/**,**/*logs/**,**/*temp/**,**/*webapps/**,**/*work/**</excludes>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Assembly -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptors>
+                        <descriptor>${project.basedir}/src/assembly/assembly.xml</descriptor>
+                    </descriptors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    tomcat10-config (https://github.com/hazendaz/tomcat10-config)
+
+    Copyright 2011-2023 Hazendaz.
+
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of The Apache Software License,
+    Version 2.0 which accompanies this distribution, and is available at
+    https://www.apache.org/licenses/LICENSE-2.0.txt
+
+    Contributors:
+        Hazendaz (Jeremy Landis).
+
+-->
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd">
+  <servers>
+    <server>
+      <id>ossrh</id>
+      <username>${env.CI_DEPLOY_USERNAME}</username>
+      <password>${env.CI_DEPLOY_PASSWORD}</password>
+    </server>
+    <!-- Used for gh-pages-scm publish via maven-scm-publish-plugin -->
+    <server>
+      <id>gh-pages-scm</id>
+      <configuration>
+        <scmVersionType>branch</scmVersionType>
+        <scmVersion>gh-pages</scmVersion>
+      </configuration>
+    </server>
+    <server>
+      <id>github</id>
+      <username>${env.CI_DEPLOY_USERNAME}</username>
+      <password>${env.GITHUB_TOKEN}</password>
+    </server>
+  </servers>
+</settings>
