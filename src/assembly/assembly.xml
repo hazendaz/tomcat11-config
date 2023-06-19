@@ -20,7 +20,7 @@
     <id>distro</id>
 
     <formats>
-        <format>tar.gz</format>
+        <format>tar.xz</format>
     </formats>
 
     <includeBaseDirectory>false</includeBaseDirectory>
