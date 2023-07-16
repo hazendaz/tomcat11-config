@@ -27,7 +27,7 @@
 
     <groupId>com.github.hazendaz.tomcat</groupId>
     <artifactId>tomcat11-config</artifactId>
-    <version>11.0.0-M9-SNAPSHOT</version>
+    <version>11.0.0-M9</version>
     <packaging>pom</packaging>
 
     <name>tomcat11-config</name>
@@ -46,7 +46,7 @@
         <connection>scm:git:ssh://git@github.com/hazendaz/tomcat11-config.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/hazendaz/tomcat11-config.git</developerConnection>
         <url>https://github.com/hazendaz/tomcat11-config</url>
-        <tag>HEAD</tag>
+        <tag>tomcat11-config-11.0.0-M9</tag>
     </scm>
     <distributionManagement>
         <site>
