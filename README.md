@@ -7,7 +7,7 @@ For more information on tomcat, please see [tomcat](https://github.com/apache/to
 
 # Motivation #
 
-Apache tomcat does not distribute the bootstrap to maven central separately not does it deliver just the configuration.  This project aims to solve that by cutting down the distribution into pieces that cannot otherwise be procured individually only.
+Apache tomcat does not distribute the bootstrap to maven central separately nor does it deliver just the configuration.  This project aims to solve that by cutting down the distribution into pieces that cannot otherwise be procured individually only.
 This is helpful for situations where one needs to review the configuration updates but doesn't need or is unable to retrieve the entire tomcat distribution package.  In such a case, this is more of a review solution and the remainder of tomcat can
 otherwise be constructed directly from central binaries as needed.
 
