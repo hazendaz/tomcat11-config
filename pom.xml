@@ -27,7 +27,7 @@
 
     <groupId>com.github.hazendaz.tomcat</groupId>
     <artifactId>tomcat11-config</artifactId>
-    <version>11.0.0-M23-SNAPSHOT</version>
+    <version>11.0.0-M24-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>tomcat11-config</name>
