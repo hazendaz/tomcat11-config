@@ -1,17 +1,22 @@
-Apache Tomcat11 Config
-----------------------
+# Apache Tomcat11 Config
+
+[![Java CI](https://github.com/hazendaz/tomcat11-config/actions/workflows/ci.yaml/badge.svg)](https://github.com/hazendaz/tomcat11-config/actions/workflows/ci.yaml)
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.hazendaz/tomcat11-config)](https://central.sonatype.com/artifact/com.github.hazendaz/tomcat11-config)
+[![License](https://img.shields.io/github/license/hazendaz/tomcat11-config)](https://www.apache.org/licenses/LICENSE-2.0)
+
+![hazendaz](src/site/resources/images/hazendaz-banner.jpg)
 
 This project takes apache tomcat distribution from maven central, extracts configuration needed items and jars not otherwise released to maven central and repackages.
 
 For more information on tomcat, please see [tomcat](https://github.com/apache/tomcat)
 
-# Motivation #
+## Motivation
 
 Apache tomcat does not distribute the bootstrap to maven central separately nor does it deliver just the configuration.  This project aims to solve that by cutting down the distribution into pieces that cannot otherwise be procured individually only.
 This is helpful for situations where one needs to review the configuration updates but doesn't need or is unable to retrieve the entire tomcat distribution package.  In such a case, this is more of a review solution and the remainder of tomcat can
 otherwise be constructed directly from central binaries as needed.
 
-# Current Retained Contents #
+## Current Retained Contents
 
 - bootstrap.jar
 - tomcat-native.tar.gz
@@ -25,7 +30,7 @@ otherwise be constructed directly from central binaries as needed.
 - RELEASE-NOTES
 - RUNNING.txt
 
-# Currently Excludes following items some might find useful #
+## Currently Excludes following items some might find useful
 
 - All libs - use maven directly to pickup or just use tomcat distribution itself
 - All webapps
