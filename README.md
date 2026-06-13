@@ -1,7 +1,7 @@
 # Apache Tomcat11 Config
 
 [![Java CI](https://github.com/hazendaz/tomcat11-config/actions/workflows/ci.yaml/badge.svg)](https://github.com/hazendaz/tomcat11-config/actions/workflows/ci.yaml)
-[![Maven Central](https://img.shields.io/maven-central/v/com.github.hazendaz/tomcat11-config)](https://central.sonatype.com/artifact/com.github.hazendaz/tomcat11-config)
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.hazendaz.tomcat/tomcat11-config)](https://central.sonatype.com/artifact/com.github.hazendaz.tomcat/tomcat11-config)
 [![License](https://img.shields.io/github/license/hazendaz/tomcat11-config)](https://www.apache.org/licenses/LICENSE-2.0)
 
 ![hazendaz](src/site/resources/images/hazendaz-banner.jpg)
